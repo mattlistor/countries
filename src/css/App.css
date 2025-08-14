@@ -1,0 +1,234 @@
+/* App.css */
+
+body {
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #121212; /* Light gray background */
+  color: #fff;
+}
+
+.App {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px; /* Space between columns */
+}
+
+.App-loading, .App-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: calc(10px + 2vmin);
+  color: #555;
+}
+
+.column1, .column2 {
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.column1 {
+  min-width: 300px;
+  max-width: 500px;
+  gap: 20px;
+}
+
+.column2 {
+  flex: 2;
+  min-width: 400px;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Select Country Dropdown */
+.select-wrapper {
+  /* margin-bottom: 25px; */
+}
+
+#country-select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  font-size: 16px;
+  color: #444;
+  appearance: none; /* Remove default select arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20512%22%3E%3Cpath%20fill%3D%22currentColor%22%20d%3D%22M192%20256L64%20128v256l128-128z%22%2F%3E%3C%2Fsvg%3E'); /* Custom arrow */
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 12px;
+  cursor: pointer;
+}
+
+#country-select:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+/* Country Name and Flag */
+.country-name {
+  margin-bottom: 20px;
+}
+
+.country-flag {
+  display: block;
+  max-width: 80%;
+  height: auto;
+  margin-bottom: 30px;
+  border: 1px solid #eee;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.country-fact {
+  display:flex;
+  flex-direction: column;
+}
+
+
+
+p b {
+  color: #555;
+  font-weight: 700;
+}
+
+/* Summary Typing Animation */
+.typing-cursor {
+  display: inline-block;
+  animation: blink-caret 0.75s step-end infinite;
+  vertical-align: bottom; /* Align with text baseline */
+  font-weight: bold; /* Make cursor noticeable */
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: black; }
+}
+
+
+/* Border Countries */
+.border-countries-title {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.image-container {
+  display: inline-block;
+  position: relative;
+  margin-right: 15px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.image-container:hover {
+  transform: translateY(-5px);
+}
+
+.image-container img {
+  border-radius: 5px;
+  object-fit: cover;
+  transition: all 0.2s ease-in-out;
+}
+
+.image-container:hover img {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.tooltip-text {
+  visibility: hidden;
+  width: max-content;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 10px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; /* Position the tooltip above the image */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 0.9em;
+}
+
+.image-container:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Map Container */
+.map-container {
+  width: 100%;
+  height: 400px; /* Fixed height for the map */
+  border-radius: 8px;
+  overflow: hidden; /* Ensures map corners are rounded */
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Google Maps Link */
+.App-link {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.App-link:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .App {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .column1, .column2 {
+    max-width: 100%;
+    margin-bottom: 20px;
+    padding: 20px;
+  }
+
+  .country-name {
+    font-size: 2em;
+  }
+
+  .country-flag {
+    max-width: 90%;
+  }
+
+  .map-container {
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  p {
+    font-size: 1em;
+  }
+
+  .country-name {
+    font-size: 1.8em;
+  }
+
+  .column1, .column2 {
+    padding: 15px;
+  }
+}

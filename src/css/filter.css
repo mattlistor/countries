@@ -1,0 +1,408 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+
+body {
+  font-family: 'Lato';
+  padding: 20px;
+}
+
+h2 {
+  font-size: 32px;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.root {
+  margin: 0 auto;
+}
+
+.wrapper {
+  display: flex;
+  flex-flow: column;
+  gap: 25px;
+  max-width: 870px;
+  margin: 0 auto;
+}
+
+.root-header {
+  font-weight: bold;
+  width: 100%;
+  font-size: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.filter-and-results-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+}
+
+.filter-and-results-desktop {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  width: 100%;
+}
+
+.filter-and-results-mobile {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.filter-and-results-mobile .filter-categories-container {
+  width: 100%;
+  background-color: #121212;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: opacity 0.5s ease-out;
+  gap: 30px;
+
+}
+
+.mobile-filters-wrapper {
+  width: 100%;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+
+.mobile-filters-wrapper.show-filters {
+  animation: slideInAndFade 0.5s forwards;
+}
+
+.mobile-filters-wrapper.hide-filters {
+  transform: translateY(-100%);
+
+}
+
+.filter-and-results-desktop .filter-categories-container {
+  width: 340px
+}
+
+.filter-categories-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-categories {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.filter-categories>.filter-section:not(:last-child) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 20px;
+}
+
+.filter-categories>.filter-section:first-child {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.filter-categories>.filter-section:last-child {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+
+.filter-categories-header {
+  display: flex;
+  gap: 10px;
+  flex-flow: column;
+  margin-bottom: 28px;
+}
+
+.chevron {
+  transition: transform 0.3s ease-in-out;
+  width: 18px;
+  height: 18px;
+}
+
+.filter-section {
+  padding: 20px;
+  background-color: #1f1f1f;
+
+}
+
+.filter-section.expanded .chevron {
+  transform: rotate(180deg);
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.filter-section:not(.expanded) .chevron {
+  transform: rotate(0deg);
+}
+
+.filter-section-title-text {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.filter-section:not(.expanded) .filter-section-title-text {
+  margin-bottom: 0;
+}
+
+.filter-section:not(.expanded) .filter-section-content {
+  height: 0;
+  opacity: 0;
+  display: none;
+}
+
+.filter-section.expanded .filter-section-content {
+  opacity: 1;
+}
+
+.chevron-down-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.filter-and-results-mobile .hide-filters-button {
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  border: none;
+  font-size: 25px;
+}
+
+.filter-and-results-desktop .hide-filters-button {
+  display: none;
+}
+
+.filter-buttons-and-pills-container {
+  display: flex;
+  flex-flow: row;
+  gap: 10px;
+}
+
+.filter-header-button {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  width: fit-content;
+  height: 18px;
+  white-space: nowrap;
+}
+
+.clear-filters-button:hover {
+  background-color: #57abe2;
+}
+
+.loader-wheel {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 2s linear infinite, fadeIn 0.5s forwards;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.filter-section-title {
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+}
+
+.search-bar {
+  width: 100%;
+  position: relative;
+}
+
+select {
+  width: 100%;
+  max-width: 500px;
+  padding: 10px 10px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-family: 'Lato';
+  font-size: 20px;
+  font-weight: 900;
+  color: white;
+  outline: none;
+  background-image: none;
+  appearance: none;
+  /* APPEARANCE LETS WORDS WRAP */
+  white-space: normal;
+  background-color: #1f1f1f;
+}
+
+option {
+  font-size: 22px;
+}
+
+.filter-pill-container {
+  display: flex;
+  gap: 8px;
+  flex-flow: row;
+}
+
+.filter-pill-wrapper {
+  position: relative;
+  display: inline-block;
+
+}
+
+.filter-pill {
+  background-color: #444;
+  display: flex;
+  gap: 8px;
+  border-radius: 50px;
+  font-size: 14px;
+  padding: 10px 15px;
+  transition: background-color 0.3s;
+}
+
+.filter-pill-clear-button {
+  cursor: pointer;
+}
+
+.filter-pill:has(.filter-pill-clear-button:hover) {
+  background-color: #555;
+}
+
+.filter-pill-title {
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+/* .filter-pill-wrapper.has-tooltip::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 8px;
+  border-radius: 4px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  font-size: 12px;
+  z-index: 1000;
+  max-width: 100%;
+}
+
+.filter-pill-wrapper:hover::after {
+  opacity: 1;
+  visibility: visible;
+} */
+
+.mobile-filters-header {
+  font-weight: bold;
+}
+
+.filter-pills-container {
+  display: flex;
+  gap: 10px;
+  flex-flow: row nowrap;
+  overflow: auto;
+  /* background-color: #222; */
+  padding: 0;
+}
+
+.filter-header-buttons-container {
+  display: flex;
+  flex-flow: row;
+  gap: 10px;
+  height: fit-content;
+
+}
+
+.filter-pills-wrapper {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.filter-pills-container {
+  /* This is the key change */
+  max-width: 100%;
+  overflow-x: hidden;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+
+  /* The following two rules are for non-standard scrollbar hiding on webkit browsers */
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scroll-arrow {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  color: #ccc;
+  height: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.scroll-arrow-right svg {
+  transform: rotate(-90deg);
+}
+
+.scroll-arrow-left svg {
+  transform: rotate(90deg);
+}
+
+@media (width < 460px) {
+  .root-header {
+    font-size: 26px;
+  }
+}
+
+@media (width < 600px) {
+  .filter-buttons-and-pills-container {
+    flex-flow: column;
+    gap: 20px;
+  }
+  .filter-header-buttons-container {
+    /* justify-content: center; */
+  }
+  .filter-and-results-mobile .filter-categories-container {
+    gap: 20px;
+  }
+}

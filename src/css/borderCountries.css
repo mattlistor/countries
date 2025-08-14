@@ -1,0 +1,177 @@
+.border-countries-input-container {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+}
+
+.margin-bottom-20 {
+    margin-bottom: 20px;
+}
+
+.border-countries-input {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Lato';
+    transition: border-radius 0.3s;
+}
+
+.border-countries-input:focus {
+    border-radius: 5px 5px 0px 0px;
+}
+
+.border-countries-search-results {
+    background-color: #333;
+    color: #fff;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    box-sizing: border-box;
+    font-size: 18px;
+    cursor: pointer;
+    transition: height 0.3s ease-out, border-bottom-left-radius 0.3s ease-out, border-bottom-right-radius 0.3s ease-out;
+    overflow-y: auto;
+    height: 0;
+}
+
+.border-countries-search-result {
+    padding: 10px 15px;
+    border-bottom: 1px solid #444;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+}
+
+.border-countries-search-result:hover {
+    background-color: #444;
+}
+
+.border-country-flags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 10px;
+}
+
+.border-country-flag-container {
+    position: relative;
+    animation: fadeIn 0.5s forwards;
+    z-index: 1;
+}
+
+.border-country-flag {
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-size: cover;
+    background-position: center;
+}
+
+.border-country-flag-placeholder {
+    height: 42px;
+    width: 65px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+    background-color: #444;
+    animation: fadeOutIn 3s infinite alternate;
+}
+
+.border-country-flag-container:hover {
+    z-index: 2; 
+}
+
+.border-country-flag-container .tooltip-text {
+    visibility: hidden;
+    opacity: 0;
+    background-color: #121212;
+    border: 1px solid #ccc;
+    color: #fff;
+    text-align: center;
+    border-radius: 4px;
+    padding: 10px; /* Keep consistent padding */
+    position: fixed;
+    z-index: 1000;
+    transition: opacity 0.3s;
+    font-size: 14px;
+    max-width: 100px;
+    white-space: normal;
+    height: fit-content;
+}
+.border-country-flag-container.fade-out {
+    animation: fadeOut 0.3s forwards;
+    pointer-events: none;
+}
+
+.border-country-flag-close-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: #ffffff;
+    width: 13px;
+    height: 13px;
+    cursor: pointer;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    visibility: hidden;
+    transition: opacity 0.1s ease-out;
+    opacity: 0;
+}
+
+.border-country-flag-close-button-overlay {
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 6px);
+    background-color: rgba(0, 0, 0, 0.4);
+    transition: opacity 0.1s ease-out;
+    opacity: 0;
+    border-radius: 4px;
+}
+
+.border-country-flag-container:hover .border-country-flag-close-button,
+.border-country-flag-container:hover .border-country-flag-close-button-overlay {
+    visibility: visible;
+    opacity: 1;
+}
+
+.border-countries-search-results .loader-wheel {
+    width: 20px;
+    height: 20px;
+    margin: 20px auto;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOutIn {
+    0% {
+        background-color: #444;
+    }
+
+    50% {
+        background-color: black;
+    }
+
+    100% {
+        background-color: #444;
+    }
+}

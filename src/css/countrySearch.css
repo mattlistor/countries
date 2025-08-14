@@ -1,0 +1,143 @@
+.search-and-results-container {
+    width: 500px;
+}
+
+.filter-and-results-mobile .search-and-results-container {
+    width: 100%;
+}
+
+.header-and-search-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.results-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.search-input {
+    padding: 10px 15px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Lato';
+    width: 100%;
+}
+
+.clear-search-button {
+    position: absolute;
+    right: 10px;
+    top: 49%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #b4b4b4;
+    font-size: 18px;
+}
+
+.show-filters-button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    width: fit-content;
+}
+
+.show-filters-button:hover {
+    background-color: #57abe2;
+}
+
+.filter-and-results-desktop .show-filters-button {
+    display: none;
+}
+
+.results-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 800px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.filter-and-results-mobile .results-container {
+    width: 100%;
+    max-height: calc(100vh - 180px);
+}
+
+.results-container.is-loading {
+    align-items: center;
+    justify-content: center;
+}
+
+
+.results-item {
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #333;
+    font-size: 18px;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.no-results-found {
+    background-color: #333;
+    font-size: 18px;
+    align-items: center;
+    padding: 30px;
+    height: fit-content;
+}
+
+.results-item:hover {
+    background-color: #444;
+}
+
+.result-item-flag-container {
+    height: 25px;
+    border-radius: 2px;
+}
+
+.result-item-flag {
+    height: 25px;
+    border-radius: 2px;
+}
+
+.results-card {
+  animation: slideInAndFade 0.5s forwards;
+  opacity: 0;
+}
+
+@keyframes slideInAndFade {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

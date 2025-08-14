@@ -1,0 +1,35 @@
+.population-select-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  width: 100%;
+}
+
+.population-filter select {
+  padding: 10px;
+  margin: 0;
+}
+
+.population-filter select,
+.population-filter option {
+  font-size: 18px;
+  font-weight: normal;
+  transition: background-color 0.3s ease;
+}
+
+.population-filter select:hover {
+  background-color: #555;
+}
+
+.population-filter select:focus {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.population-filter .select-wrapper::after {
+  visibility: hidden;
+}
+
+option {
+  background-color: #333;
+}

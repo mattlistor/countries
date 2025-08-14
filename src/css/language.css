@@ -1,0 +1,88 @@
+.language-input-container {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+}
+
+.margin-bottom-20 {
+    margin-bottom: 20px;
+}
+
+.language-input {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Lato';
+    transition: border-radius 0.3s;
+}
+
+.language-input:focus {
+    border-radius: 5px 5px 0px 0px;
+}
+
+.language-search-results {
+    background-color: #333;
+    color: #fff;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    box-sizing: border-box;
+    font-size: 18px;
+    cursor: pointer;
+    transition: height 0.3s ease-out, border-bottom-left-radius 0.3s ease-out, border-bottom-right-radius 0.3s ease-out;
+    overflow-y: auto;
+    height: 0;
+}
+
+.language-search-result {
+    padding: 10px 15px;
+    border-bottom: 1px solid #444;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+}
+
+.language-search-result:hover {
+    background-color: #444;
+}
+
+.language-pill-container {
+    display: flex;
+    gap: 7px;
+    flex-flow: row wrap;
+}
+
+.language-pill {
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px 10px;
+    width: fit-content;
+    display: flex;
+    gap: 8px;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #333;
+    border: 1px solid #555;
+    transition: background-color 0.3s ease;
+}
+
+.pill-remove-button {
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.language-pill:has(.pill-remove-button:hover) {
+    background-color: #444;
+}

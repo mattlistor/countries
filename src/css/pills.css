@@ -1,0 +1,30 @@
+.pill-item {
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px 10px;
+  width: fit-content;
+  display: flex;
+  gap: 8px;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #333;
+  border: 1px solid #555;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
+}
+
+.pill-item.selected {
+  border-color: #3498db;
+  background-color: #444;
+}
+
+.pill-item:hover {
+  background-color: #444;
+}
+
+.pill-container {
+  display: flex;
+  gap: 7px;
+  flex-flow: row wrap;
+}

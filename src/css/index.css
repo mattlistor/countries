@@ -1,0 +1,180 @@
+body {
+  margin: 0;
+  font-family: 'Lato';
+  font-size: 28px;
+  color: white;
+  background-color: #121212;
+}
+
+.map-container {
+  margin-left: 20px;
+  height: 400px;
+  width: 600px;
+  margin: 20px auto;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.App {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.App-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 24px;
+  font-family: 'Lato';
+  color: #ffffff;
+}
+
+.App-link {
+  text-decoration: none;
+}
+
+.column1 {
+  width: 50%;
+  padding: 20px;
+  text-align: start;
+}
+
+.column1 {
+  width: 50%;
+  padding: 20px;
+}
+
+.country-name {
+  font-size: 40px;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.country-flag {
+  height: 250px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+
+.select-wrapper {
+  position: relative;
+  width: fit-content;
+}
+
+.select-wrapper::after {
+  content: '\A71C';
+  font-size: 34px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #ffffff;
+}
+
+/* The scrollbar track (the background of the scrollbar) */
+select::-webkit-scrollbar {
+  width: 10px;
+  /* Width of the scrollbar */
+}
+
+/* The draggable scrolling handle */
+select::-webkit-scrollbar-thumb {
+  background-color: #888;
+  /* Color of the scrollbar thumb */
+  border-radius: 5px;
+  /* Rounded corners for the thumb */
+}
+
+/* The scrollbar track when hovering */
+select::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+  /* Color of the scrollbar track */
+}
+
+/* The scrollbar thumb when hovering */
+select::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+/* Optional: Scrollbar corners (the space between horizontal and vertical scrollbars) */
+select::-webkit-scrollbar-corner {
+  background-color: #ccc;
+}
+
+select {
+  width: 100%;
+  max-width: 500px;
+  padding: 10px 10px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-family: 'Lato';
+  font-size: 20px;
+  font-weight: 900;
+  color: white;
+  outline: none;
+  background-image: none;
+  appearance: none;
+  /* APPEARANCE LETS WORDS WRAP */
+  white-space: normal;
+  background-color: #1f1f1f;
+}
+
+option {
+  font-size: 22px;
+}
+
+b {
+  font-size: 14px;
+}
+
+p {
+  margin: 0;
+}
+
+img {
+  border-radius: 4px;
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* .tooltip-text {
+  visibility: hidden;
+  width: fit-content;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 10px;
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 40%;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 22px;
+}
+
+.image-container:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tooltip-text::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 25%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+  transform: rotate(180deg);
+} */
